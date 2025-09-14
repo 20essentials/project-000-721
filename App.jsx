@@ -1,4 +1,9 @@
-*,
+import { render } from "solid-js/web";
+
+const App = () => (
+  <>
+    <style>
+      {`*,
 *::after,
 *::before {
   box-sizing: border-box;
@@ -7,17 +12,14 @@
   font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
 }
-
 a {
   -webkit-tap-highlight-color: transparent;
 }
-
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
-
 body {
   height: 100vh;
   width: 100%;
@@ -25,4 +27,13 @@ body {
   background-image: radial-gradient(circle 20px at 100% 100%, #ef5734, #ffcc2f, black), radial-gradient(circle 20px at 0% 0%, #ef5734, #ffcc2f, black);
   background-size: 24px 24px;
   background-blend-mode: screen;
-}
+}`}
+    </style>
+  </>
+);
+
+const root = document.createElement("div");
+document.body.appendChild(root);
+render(() => <App />, root);
+
+export default App;
